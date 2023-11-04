@@ -154,3 +154,8 @@ nmap -sV --script=http-enum [target domain or IP address] (here, the target webs
 
 SMB Password Cracking
 msfconsole -q, use auxiliary/scanner/smb/smb_login, set PAS_FILE /home/parrot/password.txt, set RHOSTS 192.168.1.20, set SMBUser administrator, run 
+
+IOT/OT
+in wiresark figure by uisng filter mqtt and check ping response Select any Publish Message packet from the Packet List pane. In the Packet Details pane at the middle of the window, expand the Transmission Control Protocol, MQ 
+Telemetry Transport Protocol, and Header Flags nodes. 
+Under the MQ Telemetry Transport Protocol nodes, you can observe details such as Msg Len, Topic Length, Topic, and Message
