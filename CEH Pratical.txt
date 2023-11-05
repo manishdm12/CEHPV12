@@ -42,6 +42,7 @@ Stegnography--> Snow , Openstego
 4- hashcalc for using for any file get value of MD5, sha1, sha256 etc
 5- hashes any word or file like password as  ranwotable. for using crack hashes go to this website
 https://hashes.com/en/tools/hash_identifier and https://crackstation.net/
+sudo john --format=raw-MD5 test.txt (for crack the hashes)
 6- bctextEncoder for using some words encoded with password in this tools we can decode words with password. 
 7-cryptool using for data encrypt/decrypt with rc4/des(ecb) with key length
 
@@ -162,3 +163,5 @@ IOT/OT
 in wiresark figure by uisng filter mqtt and check ping response Select any Publish Message packet from the Packet List pane. In the Packet Details pane at the middle of the window, expand the Transmission Control Protocol, MQ 
 Telemetry Transport Protocol, and Header Flags nodes. 
 Under the MQ Telemetry Transport Protocol nodes, you can observe details such as Msg Len, Topic Length, Topic, and Message
+
+
