@@ -167,4 +167,4 @@ Under the MQ Telemetry Transport Protocol nodes, you can observe details such as
 Malware Analysis
 https://www.hybrid-analysis.com, https://www.virustotal.com/gui/home/upload, DIE tool for analize entrophy, md5 hash, sha1.
 Dependancy walker for using dll identify . Ghirdrarun.bat using for malware analysis. 
-If any malware.exe runing then we can figure out via tcpview. winPatrol -malware analysis, Mirekusoft Install Monitor, PA File Sight for file and folder monitor.  DriverView for driver monitor. DNSQuerySniffer 
+If any malware.exe runing then we can figure out via tcpview. winPatrol -malware analysis, Mirekusoft Install Monitor, PA File Sight for file and folder monitor.  DriverView for driver monitor. DNSQuerySniffer , IDA dessambly for dismantel and ollydbg, ghidra also.
