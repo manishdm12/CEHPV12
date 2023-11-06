@@ -160,11 +160,14 @@ SMB Password Cracking
 msfconsole -q, use auxiliary/scanner/smb/smb_login, set PAS_FILE /home/parrot/password.txt, set RHOSTS 192.168.1.20, set SMBUser administrator, run 
 
 IOT/OT
-in wiresark figure by uisng filter mqtt and check ping response Select any Publish Message packet from the Packet List pane. In the Packet Details pane at the middle of the window, expand the Transmission Control Protocol, MQ 
-Telemetry Transport Protocol, and Header Flags nodes. 
+in wiresark figure by uisng filter mqtt and check ping response Select any Publish Message packet from the Packet List pane. In the Packet Details pane at the middle of the window, expand the Transmission Control Protocol, Under the MQ Telemetry Transport Protocol nodes, you can observe details such as Msg Len, Topic Length, Topic, and Message.
 Under the MQ Telemetry Transport Protocol nodes, you can observe details such as Msg Len, Topic Length, Topic, and Message
 
 Malware Analysis
 https://www.hybrid-analysis.com, https://www.virustotal.com/gui/home/upload, DIE tool for analize entrophy, md5 hash, sha1.
 Dependancy walker for using dll identify . Ghirdrarun.bat using for malware analysis. 
 If any malware.exe runing then we can figure out via tcpview. winPatrol -malware analysis, Mirekusoft Install Monitor, PA File Sight for file and folder monitor.  DriverView for driver monitor. DNSQuerySniffer , IDA dessambly for dismantel and ollydbg, ghidra also.
+
+Vulnerability Assessment
+nmap -Pn --script vuln 192.168.1.4
+
